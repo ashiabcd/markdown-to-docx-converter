@@ -88,28 +88,31 @@ npm run dev
 
 
 
-##  Demo Test Cases
+## Demo Test Cases
 
-| # | Test Case             | Markdown Input                                                                                                                                                                                                                                                   | What to Verify                                                                                                   |
-|---|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| 1 | Simple Heading        | `# Welcome to My Doc`                                                                                                                                                                                                                                             | Preview shows a large bold Heading 1; downloaded DOCX has Heading 1 style.                                       |
-| 2 | Bold & Italic         | `This is **bold** text and this is *italic* text.`                                                                                                                                                                                                                 | “bold” is bold and “italic” is italic in both the preview and downloaded DOCX.                                   |
-| 3 | Bullet List           | `- First item<br>- Second item<br>- Third item`                                                                                                                                                                                                                   | Preview shows `• First item`, `• Second item`, `• Third item`; downloaded DOCX uses Word’s bullet style.       |
-| 4 | Hyperlink             | `Go to [Google](https://www.google.com) for more info.`                                                                                                                                                                                                           | Link text is blue and underlined in the preview; clicking in the downloaded DOCX opens Google.                  |
-| 5 | Mixed Formatting      | `## Features<br>- **Fast** conversion<br>- *Easy* to use<br>- [Docs](https://example.com)`                                                                                                                                                                         | Heading 2 renders correctly; first list item is bold; second is italic; third is a clickable hyperlink.         |
-| 6 | Empty Input           | *(leave textarea blank)*                                                                                                                                                                                                                                           | App shows an error “Markdown content is empty.” and does not attempt conversion.                                |
-| 7 | Comprehensive Example | `# Project Title<br><br>Welcome to **Markdown to DOCX Converter**. It is *fast* and easy.<br><br>## Key Features<br>- Live **conversion** of Markdown to DOCX  <br>- In‑browser *preview*  <br>- One‑click download<br><br>Learn more on [GitHub](https://github.com/ashiabcd/markdown-to-docx-converter).` | - Heading 1 renders as large bold title<br>- Bold and italic formatting applied correctly<br>- Bullet list shows “•”<br>- Hyperlink is underlined blue and clickable. |
+| # | Test Case             | What to Paste into App | What to Verify |
+|---|-----------------------|------------------------|----------------|
+| 1 | Simple Heading        | `# Welcome to My Doc` | Heading 1 renders large and bold; DOCX uses Heading1 style. |
+| 2 | Bold & Italic         | `This is **bold** and *italic* text.` | Bold and italic formatting appears correctly. |
+| 3 | Bullet List           | `- First item\n- Second item\n- Third item` | Each item is a bullet (`•`) in preview and DOCX. |
+| 4 | Hyperlink             | `Go to [Google](https://www.google.com)` | Text is underlined/blue and clickable in DOCX. |
+| 5 | Mixed Formatting      | `## Features\n- **Fast** conversion\n- *Easy* to use\n- [Docs](https://example.com)` | Heading 2, bold, italic, and hyperlink all render as expected. |
+| 6 | Empty Input           | *(leave blank)* | App shows error: “Markdown content is empty.” |
+| 7 | Comprehensive Example | See below ↓ | All key features tested in one block. |
 
----
+<details>
+<summary><strong>Comprehensive Example (Test 7 Input)</strong></summary>
 
-**How to run these tests:**
+```markdown
+# Project Title
 
-1. Start your backend (`dotnet run`) and frontend (`npm run dev`).  
-2. Open `http://localhost:5173/` in your browser.  
-3. For each test case above:  
-   - **Copy** the **Markdown Input** (without backticks or fences) into the textarea.  
-   - Click **Convert to DOCX**.  
-   - Verify the live preview and download/open the DOCX file match the **What to Verify** column.
+Welcome to **Markdown to DOCX Converter**. It is *fast* and easy.
 
+## Key Features
 
+- Live **conversion** of Markdown to DOCX  
+- In‑browser *preview*  
+- One‑click download
 
+Learn more on [GitHub](https://github.com/ashiabcd/markdown-to-docx-converter).
+</details>
