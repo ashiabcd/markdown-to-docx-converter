@@ -90,6 +90,9 @@ npm run dev
 
 ## Demo Test Cases
 
+> **Note:** To create a new line in the Markdown editor (textarea), **press Enter**.  
+> Don't type `\n` — it's shown in the table just to indicate a line break in the example.
+
 | # | Test Case             | What to Paste into App | What to Verify |
 |---|-----------------------|------------------------|----------------|
 | 1 | Simple Heading        | `# Welcome to My Doc` | Heading 1 renders large and bold; DOCX uses Heading1 style. |
