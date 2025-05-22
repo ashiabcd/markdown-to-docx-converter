@@ -85,3 +85,16 @@ npm run dev
 - Designed for local development with **CORS enabled** for convenience
 - Assumes **valid, well‑formed Markdown** input
 
+
+  ##  Demo Test Cases
+
+| # | Test Case        | Markdown Input                          | What to Verify                                                                 |
+|:-:|------------------|-----------------------------------------|--------------------------------------------------------------------------------|
+| 1 | Simple Heading   | ```markdown<br># Welcome to My Doc<br>``` | Preview shows a large bold Heading 1; downloaded DOCX has Heading 1 style.     |
+| 2 | Bold & Italic    | ```markdown<br>This is **bold** text and this is *italic* text.<br>``` | “bold” is bold and “italic” is italic in preview & DOCX.                       |
+| 3 | Bullet List      | ```markdown<br>- First item<br>- Second item<br>- Third item<br>``` | Preview shows • First/Second/Third items; DOCX list uses bullet symbol.        |
+| 4 | Hyperlink        | ```markdown<br>Go to [Google](https://www.google.com) for more info.<br>``` | Link text is blue+underlined in preview; clicking in DOCX opens Google.        |
+| 5 | Mixed Formatting | ```markdown<br>## Features<br>- **Fast** conversion<br>- *Easy* to use<br>- [Docs](https://example.com)<br>``` | Heading 2 renders; first list item bold; second italic; third is a hyperlink. |
+| 6 | Empty Input      | *(leave textarea blank)*                 | App shows error “Markdown content is empty.” and does not attempt conversion.  |
+
+
