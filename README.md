@@ -115,4 +115,4 @@ Welcome to **Markdown to DOCX Converter**. It is *fast* and easy.
 - One‑click download
 
 Learn more on [GitHub](https://github.com/ashiabcd/markdown-to-docx-converter).
-</details>
+
