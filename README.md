@@ -69,4 +69,19 @@ npm run dev
 
 ---
 
+## Assumptions & Scope
+
+- Supports only basic Markdown syntax:
+  - Headings (`#`, `##`)
+  - Bold (`**text**`)
+  - Italic (`*text*`)
+  - Unordered lists (`- item`)
+  - Links (`[text](url)`)
+- Does **not** support:
+  - Tables
+  - Images
+  - Code blocks
+  - Raw HTML
+- Designed for local development with **CORS enabled** for convenience
+- Assumes **valid, well‑formed Markdown** input
 
