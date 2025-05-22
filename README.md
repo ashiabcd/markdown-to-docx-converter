@@ -30,8 +30,8 @@ markdown-to-docx-converter/
 
 | Layer      | Technologies                                                |
 |------------|-------------------------------------------------------------|
-| Frontend   | React, Vite, Axios, [`docx-preview`](https://www.npmjs.com/package/docx-preview) |
-| Backend    | .NET 8 Web API, [OpenXML SDK](https://github.com/OfficeDev/Open-XML-SDK), [Markdig](https://github.com/lunet-io/markdig), [HtmlAgilityPack](https://html-agility-pack.net/) |
+| Frontend   | React, Vite, Axios, docx-preview |
+| Backend    | .NET 8 Web API, OpenXML SDK, Markdig, HtmlAgilityPack |
 | Interop    | REST API (`POST /api/markdown/convert`)                    |
 
 ---
