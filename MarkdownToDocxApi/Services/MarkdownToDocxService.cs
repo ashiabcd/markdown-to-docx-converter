@@ -1,4 +1,4 @@
-﻿/**
+/**
  * MarkdownToDocxService.cs
  *
  * This service class is responsible for converting Markdown input into a formatted DOCX file.
@@ -62,13 +62,20 @@ namespace MarkdownToDocxApi.Services
                     {
                         foreach (var li in node.SelectNodes("li"))
                         {
-                            // Add bullet point ("• ") and convert to paragraph
-                            var bulletPara = new Paragraph(
-                                new Run(new Text("• " + li.InnerText)
-                                {
-                                    Space = SpaceProcessingModeValues.Preserve
-                                }));
-                            body.Append(bulletPara);
+                            //  FIX: Instead of using li.InnerText (which strips formatting),
+                            // pass the <li> node through the same HTML-to-paragraph converter
+                            // and manually prepend a bullet symbol ("• ")
+
+                            var paragraph = ConvertHtmlNodeToParagraph(li, mainPart);
+                            if (paragraph != null)
+                            {
+                                paragraph.InsertAt(new Run(new Text("• ") 
+                                { 
+                                    Space = SpaceProcessingModeValues.Preserve 
+                                }), 0);
+
+                                body.Append(paragraph);
+                            }
                         }
                     }
                     else
@@ -115,12 +122,12 @@ namespace MarkdownToDocxApi.Services
                 }));
                 return paragraph;
             }
-            // Handle <p> (paragraphs) and inline formatting
-            else if (node.Name == "p")
+            // Handle <p> and <li> (paragraph-like elements with inline formatting)
+            else if (node.Name == "p" || node.Name == "li")
             {
                 bool first = true;
 
-                // Traverse children of the <p> tag (e.g. plain text, <strong>, <em>, <a>)
+                // Traverse children of the node (e.g. text, <strong>, <em>, <a>)
                 foreach (var child in node.ChildNodes)
                 {
                     // Add a space between inline elements
@@ -169,8 +176,8 @@ namespace MarkdownToDocxApi.Services
                             new Run(
                                 new RunProperties(
                                     new RunStyle { Val = "Hyperlink" },
-                                    new Color { Val = "0000FF" }, // Blue color
-                                    new Underline { Val = UnderlineValues.Single } // Underlined
+                                    new Color { Val = "0000FF" },
+                                    new Underline { Val = UnderlineValues.Single }
                                 ),
                                 new Text(child.InnerText)
                                 {
