@@ -32,28 +32,25 @@ markdown-to-docx-converter/
 
 1. Clone the Repository
 
-```bash
+
 git clone https://github.com/ashiabcd/markdown-to-docx-converter.git
 cd markdown-to-docx-converter
 
-2. Start the backend
+2. Start the Backend
 
-```bash
+
 cd MarkdownToDocxApi
 dotnet restore
 dotnet run
 
-- The backend runs on: https://localhost:5243/
-- Exposes an endpoint: POST /api/markdown/convert
+The backend runs at: https://localhost:5243/
+API endpoint: POST /api/markdown/convert
 
-3. Start the frontend
+3. Start the Frontend
 
-```bash
-cd markdown-to-docx-frontend
+cd ../markdown-to-docx-frontend
 npm install
 npm run dev
 
-- The frontend runs on: http://localhost:5173/
-- Sends POST requests to the backend endpoint to convert Markdow
-
-   
+The frontend runs at: http://localhost:5173/
+Sends POST requests to the backend to convert Markdown to DOCX
