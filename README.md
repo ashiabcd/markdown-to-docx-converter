@@ -119,6 +119,5 @@ Welcome to **Markdown to DOCX Converter**. It is *fast* and easy.
 
 Learn more on [GitHub](https://github.com/ashiabcd/markdown-to-docx-converter).
 
-> **Note:** To create a new line in the Markdown editor (textarea), **press Enter**.  
-> Don't type `\n` — it's shown in the table just to indicate a line break in the example.
+
 
